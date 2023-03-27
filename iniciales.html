@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de separación de primeras letras</title>
+    <style>
+      #texto {
+        width: 400px;
+        height: 100px;
+      }
+      
+      #resultado {
+        width: 400px;
+        height: 100px;
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="texto">Escribe aquí:</label>
+    <textarea id="texto"></textarea>
+    <br>
+    <button onclick="separarLetras()">Separar primeras letras</button>
+    <br>
+    <div id="resultado"></div>
+    
+    <script>
+      function separarLetras() {
+        const texto = document.getElementById("texto").value;
+        const palabras = texto.split(" ");
+        let resultado = "";
+        
+        for (let i = 0; i < palabras.length; i++) {
+          resultado += "<span style='color: red'>" + palabras[i].charAt(0) + "</span> ";
+        }
+        
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>
